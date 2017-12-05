@@ -195,9 +195,13 @@ double asinh_l(double x)
 }
 
 int main(){ /* compile with gcc -lm test.c */
-  double x, y;
+  long double x, y;
   x = -2.1073424255447017e-08;
+  // this fails
+  //y = asinh(x);
+
+  // this passes
   y = asinh_l(x);
-  printf("y = %20.16e\n",y);
+  printf("y = %20.16Le\n",y);
   printf("should be -2.1073424255447017e-08\n");
 }
